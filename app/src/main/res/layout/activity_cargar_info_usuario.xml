@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#150932"
+    android:backgroundTint="#A59FDA"
+    tools:context=".CargarInfoUsuario">
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="125dp"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom|center|right"
+        android:onClick="registrodatos"
+        android:text="Registrarse" />
+
+    <ImageView
+        android:id="@+id/imageViewavion"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="start"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="13dp"
+        android:background="#DF1313"
+        android:visibility="visible"
+        app:srcCompat="@drawable/_442125" />
+
+    <EditText
+        android:id="@+id/editTextTextdescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|right"
+        android:ems="10"
+        android:hint="Descripcion"
+        android:inputType="text"
+        android:textSize="16sp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="182dp"
+        android:layout_height="128dp"
+        android:layout_gravity="right|top"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="14dp"
+        android:background="#1240CF"
+        app:srcCompat="@android:drawable/ic_menu_upload" />
+
+    <EditText
+        android:id="@+id/editTextTextNAME"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center|left"
+        android:layout_margin="15dp"
+        android:background="#CABBE4"
+        android:backgroundTint="#E6D9D9"
+        android:gravity="center|left"
+        android:text="Queremos saber de ti"
+        android:textSize="24dp" />
+
+</FrameLayout>
