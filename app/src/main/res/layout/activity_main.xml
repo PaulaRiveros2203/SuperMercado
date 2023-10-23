@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D998E4"
+    android:background="#F8F5F5"
     android:onClick="tablaprod"
+    android:scrollbarTrackVertical="@drawable/_48964"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenido a su papeleria"
-        android:textColor="#9C27B0"
+        android:backgroundTint="#D68585"
+        android:text="Bienvenido a su supermercado"
+        android:textColor="#925FED"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,25 +37,14 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/buttonRegistrarse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="registro"
-                android:text="Registrate" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="datosPersonales"
-                android:text="Tratamiento datos personales" />
-
-            <Button
                 android:id="@+id/b_agregarprod"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="agregarProd"
-                android:text="@string/add_product_buttom" />
+                android:text="@string/add_product_buttom"
+                android:textColor="#FFFDFD"
+                android:textColorHighlight="#000000"
+                android:textColorLink="#151515" />
 
             <Button
                 android:id="@+id/buttonTable"
@@ -61,6 +52,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="tablaProd"
                 android:text="Tabla de productos" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="eliminarprod"
+                android:text="Eliminar Producto" />
 
         </LinearLayout>
     </ScrollView>

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PAPELERIA"
         tools:targetApi="31">
         <activity
+            android:name=".EliminarProducto"
+            android:exported="false" />
+        <activity
             android:name=".TablaProductos"
             android:exported="false" />
         <activity

@@ -20,17 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void datosPersonales (View view){
-        Intent cargarDatosPersonales = new Intent(this, CargarDatosPersonales.class);
-        startActivity(cargarDatosPersonales);
-    }
-   public void registro (View view){
-       Intent cargarInfoPersonales = new Intent(this,  CargarInfoUsuario.class);
-       startActivity(cargarInfoPersonales);
-   }
+
    public  void tablaProd (View view){
        Intent abrirProducto = new Intent(this,  TablaProductos.class);
        startActivity(abrirProducto);
 
+   }
+   public void eliminarprod (View view){
+        Intent eliminarprod = new Intent(this, EliminarProducto.class);
+                startActivity(eliminarprod);
    }
 }
