@@ -1,4 +1,4 @@
-package com.example.papeleria;
+package app.inventario.papeleria;
 
 import android.content.Context;
 

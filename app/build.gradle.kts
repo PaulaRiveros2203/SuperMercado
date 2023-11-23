@@ -7,7 +7,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.papeleria"
+        applicationId = "app.inventario.papeleria"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

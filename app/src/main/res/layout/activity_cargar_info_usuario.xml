@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#150932"
     android:backgroundTint="#A59FDA"
-    tools:context=".CargarInfoUsuario">
+    tools:context="app.inventario.papeleria.CargarInfoUsuario">
 
 
     <Button

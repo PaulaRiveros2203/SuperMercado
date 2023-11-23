@@ -1,4 +1,4 @@
-package com.example.papeleria.entities;
+package app.inventario.papeleria.entities;
 
 import java.io.Serializable;
 

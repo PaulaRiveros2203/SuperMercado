@@ -1,4 +1,4 @@
-package com.example.papeleria;
+package app.inventario.papeleria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,15 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.papeleria.constants.Constantes;
-import com.example.papeleria.entities.Producto;
-import com.example.papeleria.entities.Registrarse;
+import com.example.papeleria.R;
+
+import app.inventario.papeleria.constants.Constantes;
+import app.inventario.papeleria.entities.Registrarse;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 
 public class CargarInfoUsuario extends AppCompatActivity {
     private EditText nombre, descripcion;

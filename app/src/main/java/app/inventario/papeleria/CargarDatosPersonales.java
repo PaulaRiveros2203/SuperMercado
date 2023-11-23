@@ -1,4 +1,4 @@
-package com.example.papeleria;
+package app.inventario.papeleria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,8 +12,10 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.papeleria.constants.Constantes;
-import com.example.papeleria.entities.DatosPersonales;
+import com.example.papeleria.R;
+
+import app.inventario.papeleria.constants.Constantes;
+import app.inventario.papeleria.entities.DatosPersonales;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -29,7 +31,7 @@ public class CargarDatosPersonales extends AppCompatActivity {
     private Switch acepto ;
 
 
-    private  DatosPersonales datosPersonales;
+    private DatosPersonales datosPersonales;
 
 
 

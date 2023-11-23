@@ -1,16 +1,16 @@
-package com.example.papeleria;
+package app.inventario.papeleria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.example.papeleria.constants.Constantes;
-import com.example.papeleria.entities.Producto;
+import com.example.papeleria.R;
+
+import app.inventario.papeleria.constants.Constantes;
+import app.inventario.papeleria.entities.Producto;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;

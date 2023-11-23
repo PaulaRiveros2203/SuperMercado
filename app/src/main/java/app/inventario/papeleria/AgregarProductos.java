@@ -1,4 +1,4 @@
-package com.example.papeleria;
+package app.inventario.papeleria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,57 +11,57 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.papeleria.constants.Constantes;
-import com.example.papeleria.entities.Producto;
+import com.example.papeleria.R;
+
+import app.inventario.papeleria.constants.Constantes;
+import app.inventario.papeleria.entities.Producto;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 
-public class EliminarProducto extends AppCompatActivity {
-    private EditText nombreProd;
+public class AgregarProductos extends AppCompatActivity {
+    private EditText nombreProd, precioProd, cantidadProd, precioVenta;
     private Spinner spinnerTipo;
     private ArrayList<Producto> listaProductos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminar_producto);
+        abrirProducto();
+        setContentView(R.layout.agregar_productos);
         nombreProd = (EditText) findViewById(R.id.editTextText);
+        precioProd = (EditText) findViewById(R.id.e_precioprod);
+        cantidadProd = (EditText) findViewById(R.id.editTextNumber);
+        precioVenta = (EditText) findViewById(R.id.editTextNumberDecimal2);
         spinnerTipo = (Spinner) findViewById(R.id.spinner);
         String[] opciones = {"Frescos", "Cuidado del hogar", "Despensa", "otros"};
         ArrayAdapter<String> listaOpcionesTipo = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, opciones);
         spinnerTipo.setAdapter(listaOpcionesTipo);
 
-        // Cargar la lista de productos desde el archivo (si existe)
-        cargarProductos();
     }
 
-    public void eliminar(View view) {
-        String nombreEliminar = nombreProd.getText().toString();
-        String tipoEliminar = spinnerTipo.getSelectedItem().toString();
+    public void agregar(View view) {
+        Producto nuevoProducto = new Producto();
 
-        // Iterar sobre la lista de productos y eliminar el producto con el nombre y tipo especificados
-        Iterator<Producto> iterator = listaProductos.iterator();
-        while (iterator.hasNext()) {
-            Producto producto = iterator.next();
-            if (producto.getNombre().equals(nombreEliminar) && producto.getTipo().equals(tipoEliminar)) {
-                iterator.remove();
-            }
-        }
+        nuevoProducto.setNombre(nombreProd.getText().toString());
+        nuevoProducto.setCantidad(Integer.parseInt(cantidadProd.getText().toString()));
+        nuevoProducto.setPrecio(Double.parseDouble(precioProd.getText().toString()));
+        nuevoProducto.setVenta(Double.parseDouble(precioVenta.getText().toString()));
+        nuevoProducto.setTipo(spinnerTipo.getSelectedItem().toString());
 
-        // Guardar la lista de productos actualizada
-        EliminarProd();
+        listaProductos.add(nuevoProducto);
 
-        Toast.makeText(this, "Producto Eliminado", Toast.LENGTH_SHORT).show();
+        guardarProducto();
+        Toast.makeText(this, "Producto guardado", Toast.LENGTH_SHORT).show();
+
         Intent mainActivity = new Intent(this, MainActivity.class);
         startActivity(mainActivity);
     }
 
-    public void EliminarProd() {
+    public void guardarProducto() {
         try {
             FileOutputStream fos = openFileOutput(Constantes.ARCHIVO_CARGA_LOCAL_INVENTARIO, Context.MODE_PRIVATE);
             ObjectOutputStream oss = new ObjectOutputStream(fos);
@@ -69,15 +69,17 @@ public class EliminarProducto extends AppCompatActivity {
             oss.close();
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 
-    private void cargarProductos() {
+    public void abrirProducto() {
         try {
-            FileInputStream fis = openFileInput(Constantes.ARCHIVO_CARGA_LOCAL_INVENTARIO);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            listaProductos = (ArrayList<Producto>) ois.readObject();
-            ois.close();
+            FileInputStream fin = openFileInput(Constantes.ARCHIVO_CARGA_LOCAL_INVENTARIO);
+            ObjectInputStream oin = new ObjectInputStream(fin);
+            listaProductos = (ArrayList<Producto>) oin.readObject();
+            oin.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

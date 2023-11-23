@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#DCAAC9"
     android:backgroundTint="#E9C0F3"
-    tools:context=".AgregarProductos">
+    tools:context="app.inventario.papeleria.AgregarProductos">
 
     <TextView
         android:id="@+id/textView2"

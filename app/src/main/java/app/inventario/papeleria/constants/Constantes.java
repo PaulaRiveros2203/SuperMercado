@@ -1,4 +1,4 @@
-package com.example.papeleria.constants;
+package app.inventario.papeleria.constants;
 
 public class Constantes {
     public static String ARCHIVO_CARGA_LOCAL_INVENTARIO = "inventario.dat";
